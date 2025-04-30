@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> </head>
+    <script src="svg-inject.min.js"></script>
+<body>
+    <header>
+        <nav class="menu-principal">
+            <div class="menu-esquerda">
+              <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+              </ul>
+            </div>
+            <img class="logo" src="/img/logo_w.svg" />
+            <div class="menu-direita">
+                <ul>
+                  <li><a href="#">Contato</a></li>
+                  <li><a href="#">Serviços</a></li>
+                </ul>
+              </div>
+            </nav>
+    </header>
+
+    <main id="inicio">
+        <section class="apresentacao">
+            <h1>Olá, eu sou Wesley</h1>
+            <p>Desenvolvedor Front-end | Apaixonado por tecnologia</p>
+            <div class="links-profissionais">
+                <a href="[Seu LinkedIn]" target="_blank">LinkedIn</a>
+                <a href="[Seu GitHub]" target="_blank">GitHub</a>
+            </div>
+        </section>
+        <section>
+            <img class="astro efeito-astronauta" src="/img/astronauta-sup.svg" />
+        </section>
+    </main>
+
+    <footer id="contato">
+        <p>&copy; 2025 </p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+          const menu = document.querySelector('.menu-principal');
+          menu.classList.toggle('ativo');
+        }
+      </script>
+
+</body>
+</html>
