@@ -10,48 +10,58 @@
     <link rel="stylesheet" href="style.css"> </head>
     <script src="svg-inject.min.js"></script>
 <body>
+
     <header>
         <nav class="menu-principal">
             <div class="menu-esquerda">
               <ul>
                 <li><a href="#">Início</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Sobre Mim</a></li>
               </ul>
             </div>
             <img class="logo" src="/img/logo_w.svg" />
             <div class="menu-direita">
+
                 <ul>
                   <li><a href="#">Contato</a></li>
-                  <li><a href="#">Serviços</a></li>
+                  <li><a href="#">Portifólio</a></li>
                 </ul>
               </div>
             </nav>
     </header>
 
     <main id="inicio">
-        <section class="apresentacao">
+    <section class="apresentacao container">
+        <div class="apresentacao-conteudo">
             <h1>Olá, eu sou Wesley</h1>
-            <p>Desenvolvedor Front-end | Apaixonado por tecnologia</p>
-            <div class="links-profissionais">
-                <a href="[Seu LinkedIn]" target="_blank">LinkedIn</a>
-                <a href="[Seu GitHub]" target="_blank">GitHub</a>
-            </div>
-        </section>
-        <section>
-            <img class="astro efeito-astronauta" src="/img/astronauta-sup.svg" />
-        </section>
-    </main>
+            <p>Desenvolvedor Full stack | Apaixonado por tecnologia</p>
+        </div>
+        <div class="rocket">
+            <img src="/img/rocket.svg" alt="Ícone de um foguete"/>
+        </div>
+        <div class="links-profissionais">
+            <a href="https://www.linkedin.com/in/wesley-nascimento-54883a218/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/Wesley9696" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="/pdf/Curriculum Wesley 2025.pdf" download>Download CV</a>
+        </div>
+    </section>
+    <section class="efeitos visuais container">
+        <img class="astro efeito-astronauta" src="/img/astronauta-sup.svg" alt="Ilustração de um astronauta"/>
+        <img class="lua" src="/img/lua_png.svg" alt="Ilustração de uma lua"/>
+    </section>
+</main>
 
-    <footer id="contato">
-        <p>&copy; 2025 </p>
-    </footer>
-    <script src="script.js"></script>
-    <script>
-        function toggleMenu() {
-          const menu = document.querySelector('.menu-principal');
-          menu.classList.toggle('ativo');
-        }
-      </script>
+<footer id="contato" class="container">
+    <p>&copy; Wesley Nascimento 2025 - Todos os direitos reservados.</p>
+</footer>
 
+<script src="script.js"></script>
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('.menu-principal');
+        menu.classList.toggle('ativo');
+    }
+</script>
 </body>
+
 </html>

@@ -1,49 +1,52 @@
-
+/* Definições Globais */
 html {
     box-sizing: border-box !important;
     font-family: "Lexend Deca", sans-serif;
     background-color: #0C1114;
+    background-image: url("img/estrelas_png.png");
+    overflow-x: hidden;
 }
+
 *, *:before, *:after {
     box-sizing: inherit !important;
     color: #fff;
 }
-/* Estilos gerais do corpo */
-.body {
+
+body {
     margin: 0;
     padding: 0;
-    color: #fff;
+    color: #fff; /* Redundante, já definido no seletor universal */
 }
 
-/* Estilos do cabeçalho */
+/* Estilos do Cabeçalho */
 header {
-    width: 50%;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 0;
     background-color: #0C1114;
     border-radius: 50px;
     padding: 1em 5px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda branca bem fraca */
-    width: 90%;/* Alinhamento central com largura menor e responsivo */
-    max-width: 1200px; /* limite máximo em telas grandes */
-    margin: 20px auto 0 auto; /* centraliza horizontalmente */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-sizing: border-box;
 }
 
-/* Estilos da barra de navegação */
-header nav {
-    height: 40px; /* Altura do menu */
+header nav.menu-principal {
+    height: 40px;
     display: flex;
-    align-items: center; /* Alinha verticalmente ao centro */
+    align-items: center;
     justify-content: center;
 }
 
-/* Estilos do menu da esquerda */
-.menu-esquerda {
+/* Estilos do Menu */
+.menu-esquerda,
+.menu-direita {
     display: flex;
     align-items: center;
 }
 
-.menu-esquerda ul {
+.menu-esquerda ul,
+.menu-direita ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -51,26 +54,104 @@ header nav {
     align-items: center;
 }
 
-.menu-esquerda ul li {
+.menu-esquerda ul li,
+.menu-direita ul li {
     margin: 0 1em;
 }
 
-/* Estilos da logo */
+/* Estilos da Logo */
 .logo {
     margin: 0 1.5em;
+    max-height: 80%;
+    max-width: 150px;
     height: auto;
-    max-height: 80%; /* Ajuste conforme necessário */
     width: auto;
-    max-width: 150px; /* Ajuste conforme necessário */
     border: none;
 }
 
-.astro{
+/* Estilos da Seção Principal */
+main {
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+.apresentacao {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.apresentacao h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.apresentacao p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+/* Estilos dos Links Profissionais */
+.links-profissionais a {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    margin: 0 0.5em;
+}
+
+.links-profissionais a:hover {
+    background-color: #777;
+}
+
+/* Estilos das Imagens */
+.astro {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 100vh;
+    max-height: 90vh;
     height: auto;
-    max-height: 100%; /* Ajuste conforme necessário */
     width: auto;
-    max-width: 550px; /* Ajuste conforme necessário */
     border: none;
+}
+
+.lua {
+    max-width: 150vh;
+    max-height: 150vh;
+    height: auto;
+    width: auto;
+    border: none;
+}
+
+
+.rocket {
+    width: 8vmin;
+    height: 150px;
+    background-image: url("/img/rocket.svg");
+    transform: translateX(100em) rotateZ(-90deg);
+    position: relative;
+    mix-blend-mode: exclusion;
+    animation: rocketMove 4s ease-out infinite;
+    display: flex;
+    align-items: center;
+}
+
+.rocket img {
+    max-width: 120%;
+    max-height: 120%;
+    object-fit: contain;
+}
+
+/* Animações */
+@keyframes rocketMove {
+    0% {
+        transform: translateX(100em) rotateZ(-90deg); /* Corrigi o valor inicial */
+    }
+    100% {
+        transform: translateX(-70em) rotateZ(-90deg);
+    }
 }
 
 @keyframes flutuarERodar {
@@ -84,82 +165,35 @@ header nav {
 
 .efeito-astronauta {
     animation: flutuarERodar 7s ease-in-out infinite;
-    transform-origin: center center; /* gira em torno do centro */
+    transform-origin: center center;
 }
 
-
-/* Estilos do menu da direita */
-.menu-direita {
-    display: flex;
-    align-items: center;
-}
-
-.menu-direita ul {
+/* Estilos da Navegação Principal (dentro do header) */
+nav.menu-principal ul { /* Especificidade maior */
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    align-items: center;
+    display: flex; /* Garante que os itens fiquem em linha */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Centraliza horizontalmente os grupos de menu */
 }
 
-.menu-direita ul li {
+nav.menu-principal ul li {
+    display: inline; /* Pode ser removido pois o flex já cuida do layout em linha */
     margin: 0 1em;
 }
 
-/* Estilos dos links de navegação */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center; /* Pode não ser necessário aqui com o flex layout */
-}
-
-nav ul li {
-    display: inline; /* Pode não ser necessário aqui com o flex layout */
-    margin: 0 1em;
-}
-
-nav ul li a {
+nav.menu-principal ul li a {
     text-decoration: none;
     padding: 0.5em 1em;
     border-radius: 50px;
 }
 
-nav ul li a:hover {
+nav.menu-principal ul li a:hover {
     background-color: #555;
-    
 }
 
-/* Estilos da seção principal */
-main {
-    padding: 20px;
-    text-align: center;
-}
-
-.apresentacao h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
-
-.apresentacao p {
-    font-size: 1.2em;
-    margin-bottom: 1em;
-}
-
-/* Estilos dos links profissionais */
-.links-profissionais a {
-    display: inline-block;
-    padding: 0.8em 1.5em;
-    text-decoration: none;
-    border-radius: 50px;
-    margin: 0 0.5em;
-}
-
-.links-profissionais a:hover {
-    background-color: #777;
-}
-
-/* Estilos do rodapé */
+/* Estilos do Rodapé */
 footer {
     text-align: center;
     position: fixed;
@@ -168,4 +202,9 @@ footer {
     width: 100%;
     margin: 0;
     padding: 5px 0;
+}
+
+footer p {
+    font-weight: 200;
+    letter-spacing: 1px;
 }
